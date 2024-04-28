@@ -1,3 +1,12 @@
+// Define the toggleMenu function in the global scope
+function toggleMenu() {
+  const menu = document.querySelector('.menu-links');
+  const icon = document.querySelector('.hamburger-icon');
+  menu.classList.toggle('open');
+  icon.classList.toggle('open');
+}
+
+// Ensure the DOMContentLoaded event listener is outside any other function or scope
 document.addEventListener('DOMContentLoaded', function() {
   const video = document.getElementById('about-video'); 
 
@@ -19,11 +28,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const observer = new IntersectionObserver(handleIntersection, options); 
   observer.observe(video); 
-
-  function toggleMenu() {
-    const menu = document.querySelector('.menu-links');
-    const icon = document.querySelector('.hamburger-icon');
-    menu.classList.toggle('open');
-    icon.classList.toggle('open');
-  }
 });
